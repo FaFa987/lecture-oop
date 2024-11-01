@@ -5,14 +5,18 @@ package se.lexicon;
 public class Main {
     public static void main(String[] args) {//TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        Car bmwX6 = new Car();
-        bmwX6.regNumber = "ABC1";
-        bmwX6.brand = "BMW";
-        bmwX6.model = "X6";
-        bmwX6.color = "black";
+        Car volvo = new Car();
+        volvo.generationId();
+        volvo.setBrand("PO14");
+        volvo.setModel("20M");
 
 
-        System.out.printf(bmwX6.getCarInfo());
+        Car car1 = new Car();
+        car1.generationId();
+        car1.setBrand("K500");
+
+        System.out.println(volvo.getCarInfo());
+        System.out.println(car1.getCarInfo());
 
 
     }
