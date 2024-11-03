@@ -10,6 +10,7 @@ public class Car {
     private String model;
     private int year;
     private String color;
+    private Person owner;
 
     private void generationId(){
         this.regNumber = UUID.randomUUID().toString();
@@ -38,6 +39,9 @@ public class Car {
     public String getBrand() {
         return brand;
     }
+    public void setOwner(Person owner){
+        this.owner = owner;
+    }
 
     public Car(String brand, String model, int year) {
         this.generationId();
@@ -47,121 +51,29 @@ public class Car {
     }
     public  Car(String brand, String model){
         this(brand, model, LocalDate.now().getYear());
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     public String getCarInfo(){
-        return "Car info -> " + "# " + regNumber + ",  brand: " + brand + ", model: " + model + ", year: " + year;
+        //return "Car info -> " + "# " + regNumber + ",  brand: " + brand + ", model: " + model + ", year: " + year;
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append("Car info -> ");
+        sb2.append("# ");
+        sb2.append(regNumber);
+        sb2.append(",  brand: ");
+        sb2.append(brand);
+        sb2.append(", model: ");
+        sb2.append(model);
+        sb2.append(", year: ");
+        sb2.append(year);
+
+        if(owner != null){
+            sb2.append(", owner: ");
+            sb2.append(owner.getName());
+        }else {
+            sb2.append(" No Owner");
+        }
+
+
+        return sb2.toString();
     }
 }
