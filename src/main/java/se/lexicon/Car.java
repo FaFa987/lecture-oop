@@ -1,5 +1,6 @@
 package se.lexicon;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 public class Car {
@@ -10,22 +11,15 @@ public class Car {
     private int year;
     private String color;
 
+    private void generationId(){
+        this.regNumber = UUID.randomUUID().toString();
+    }
+
     public void setBrand(String brand) {
         if(brand == null || brand.trim().isEmpty())
             throw new IllegalArgumentException("Brand cannot be null or empty");
         this.brand = brand;
     }
-
-    public void generationId(){
-        this.regNumber = UUID.randomUUID().toString();
-    }
-
-    /*
-    public void setRegNumber(String regNumber) {
-        if(regNumber == null || regNumber.trim().isEmpty())
-            throw new IllegalArgumentException("RegNumber cannot be null or empty");
-        this.regNumber = regNumber;
-    }*/
 
     public void setModel(String model) {
         if(model == null || model.trim().isEmpty())
@@ -33,8 +27,141 @@ public class Car {
         this.model = model;
     }
 
+    public void setRegNumber(String regNumber) {
+        this.regNumber = regNumber;
+    }
+
+    public String getRegNumber() {
+        return regNumber;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public Car(String brand, String model, int year) {
+        this.generationId();
+        this.setBrand(brand);
+        this.setModel(model);
+        this.year = year;
+    }
+    public  Car(String brand, String model){
+        this(brand, model, LocalDate.now().getYear());
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 
     public String getCarInfo(){
-        return "Car info -> " + "# " + regNumber + ",  brand: " + brand + ", model: " + model;
+        return "Car info -> " + "# " + regNumber + ",  brand: " + brand + ", model: " + model + ", year: " + year;
     }
 }
